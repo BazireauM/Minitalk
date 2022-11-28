@@ -12,7 +12,33 @@
 
 #include "minitalk.h"
 
-int main(void)
+void	test(int sig)
 {
+	static int	c;
+	static int	i;
+
+	if (sig == SIGUSR1)
+		c |= (1 << i);
+	i++;
+	if (i == 8)
+	{
+		printf("%c", c);
+		c = 0;
+		i = 0;
+	}
+}
+
+int	main(void)
+{
+	int	pid;
+
+	pid = getpid();
+	printf("%d\n", pid);
+	while (1)
+	{
+		signal(SIGUSR1, test);
+		signal(SIGUSR2, test);
+		pause ();
+	}
 	return (0);
 }
