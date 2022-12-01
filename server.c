@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 03:10:37 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/26 03:12:22 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/12/01 08:17:26 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	test(int sig)
 	i++;
 	if (i == 8)
 	{
-		printf("%c", c);
+		write(1, &c, 1);
 		c = 0;
 		i = 0;
 	}
@@ -30,10 +30,13 @@ void	test(int sig)
 
 int	main(void)
 {
-	int	pid;
+	int		pid;
+	char	*test2;
 
 	pid = getpid();
-	printf("%d\n", pid);
+	test2 = ft_itoa(pid);
+	ft_putstr_fd(test2, 1);
+	free(test2);
 	while (1)
 	{
 		signal(SIGUSR1, test);

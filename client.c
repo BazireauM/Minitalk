@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 03:09:36 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/26 03:12:24 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/12/01 08:10:08 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	send_char(int pid, char c)
 {
-	int bit;
+	int	bit;
 
 	bit = 0;
 	while (bit < 8)
@@ -27,6 +27,7 @@ void	send_char(int pid, char c)
 		bit++;
 	}
 }
+
 int	main(int argc, char *argv[])
 {
 	int	pid;

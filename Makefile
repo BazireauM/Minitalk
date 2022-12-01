@@ -4,7 +4,9 @@ NAME2 = server
 
 SRCS1	=	client.c
 
-SRCS2	=	server.c
+SRCS2	=	server.c\
+			ft_itoa.c\
+			ft_putstr_fd.c
 
 OBJS1	=	$(SRCS1:.c=.o)
 
