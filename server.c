@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 03:10:37 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/12/01 08:17:26 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/12/09 11:05:07 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int	main(void)
 	pid = getpid();
 	test2 = ft_itoa(pid);
 	ft_putstr_fd(test2, 1);
+	write(1, &"\n", 1);
 	free(test2);
 	while (1)
 	{
